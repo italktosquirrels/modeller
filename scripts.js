@@ -1,53 +1,59 @@
 var G_unadjustedFPTotal = 0;
 var technical_Complexity = 0;
 
+/**
+ * This takes the user inputs and weights
+ * and calculates the unadjusted function point value
+ * By Alex Watson, 001197775
+ */
 function calculateUnadjustedFP() {
+    //Variables to hold inputs
     var input = 0
     var output = 0
     var inquire = 0
     var file = 0
     var interfaces = 0
 
-    //I N P U T S
-    input = $('#numInput').val()
-    inputWeigth = document.querySelector('#inputWeight')
-    inputWeigthValue = inputWeigth.options[inputWeigth.selectedIndex].value;
-    inputTotal = input * inputWeigthValue
-    $('#totalInput').val(inputTotal)
+    //C A L C U L A T E  I N P U T S
+    input = $('#numInput').val()    //Holds the value of the user input for the number of inputs
+    inputWeigth = document.querySelector('#inputWeight')    //Gets the the weight values from the dropdown
+    inputWeigthValue = inputWeigth.options[inputWeigth.selectedIndex].value;    //Pulls the selected value out of the drop down
+    inputTotal = input * inputWeigthValue   //Calculates the input total
+    $('#totalInput').val(inputTotal)    //Assigns it to the respective field
     console.log(inputTotal)
-        //O U T P U T S
-    output = $('#numOutput').val()
-    outputWeigth = document.querySelector('#outputWeight')
-    outputWeigthValue = outputWeigth.options[outputWeigth.selectedIndex].value;
-    outputTotal = output * outputWeigthValue
-    $('#totalOutput').val(outputTotal)
+        //C A L C U L A T E  O U T P U T S
+    output = $('#numOutput').val()  //Holds the value of the user input for the number of outputs
+    outputWeigth = document.querySelector('#outputWeight')  //Gets the the weight values from the dropdown
+    outputWeigthValue = outputWeigth.options[outputWeigth.selectedIndex].value;    //Pulls the selected value out of the drop down
+    outputTotal = output * outputWeigthValue   //Calculates the output total
+    $('#totalOutput').val(outputTotal)    //Assigns it to the respective field
     console.log(outputTotal)
-        //I N Q U I R E S
-    inquire = $('#numInquire').val()
-    inquireWeigth = document.querySelector('#inquireWeight')
-    inquireWeigthValue = inquireWeigth.options[inquireWeigth.selectedIndex].value;
-    inquireTotal = inquire * inquireWeigthValue
-    $('#totalInquire').val(inquireTotal)
+        //C A L C U L A T E  I N Q U I R E S
+    inquire = $('#numInquire').val()    //Holds the value of the user input for the number of inquires
+    inquireWeigth = document.querySelector('#inquireWeight')    //Gets the the weight values from the dropdown
+    inquireWeigthValue = inquireWeigth.options[inquireWeigth.selectedIndex].value;    //Pulls the selected value out of the drop down
+    inquireTotal = inquire * inquireWeigthValue   //Calculates the inquire total
+    $('#totalInquire').val(inquireTotal)    //Assigns it to the respective field
     console.log(inquireTotal)
-        //F I L E S
-    file = $('#numFile').val()
-    fileWeigth = document.querySelector('#fileWeight')
-    fileWeigthValue = fileWeigth.options[fileWeigth.selectedIndex].value;
-    fileTotal = file * fileWeigthValue
-    $('#totalFile').val(fileTotal)
+        //C A L C U L A T E  F I L E S
+    file = $('#numFile').val()  //Holds the value of the user input for the number of files
+    fileWeigth = document.querySelector('#fileWeight')  //Gets the the weight values from the dropdown
+    fileWeigthValue = fileWeigth.options[fileWeigth.selectedIndex].value;    //Pulls the selected value out of the drop down
+    fileTotal = file * fileWeigthValue   //Calculates the files total
+    $('#totalFile').val(fileTotal)    //Assigns it to the respective field
     console.log(fileTotal)
-        //I N Q U I R E S
-    interfaces = $('#numInterface').val()
-    interfacesWeigth = document.querySelector('#interfacesWeight')
-    interfacesWeigthValue = interfacesWeigth.options[interfacesWeigth.selectedIndex].value;
-    interfacesTotal = interfaces * interfacesWeigthValue
-    $('#totalInterface').val(interfacesTotal)
+        //C A L C U L A T E  I N Q U I R E S
+    interfaces = $('#numInterface').val()   //Holds the value of the user input for the number of interfaces
+    interfacesWeigth = document.querySelector('#interfacesWeight')  //Gets the the weight values from the dropdown
+    interfacesWeigthValue = interfacesWeigth.options[interfacesWeigth.selectedIndex].value;    //Pulls the selected value out of the drop down
+    interfacesTotal = interfaces * interfacesWeigthValue   //Calculates the interfaces total
+    $('#totalInterface').val(interfacesTotal)    //Assigns it to the respective field
     console.log(interfacesTotal)
 
-    UFPtotal = inputTotal + outputTotal + inquireTotal + fileTotal + interfacesTotal
-    G_unadjustedFPTotal = UFPtotal
+    UFPtotal = inputTotal + outputTotal + inquireTotal + fileTotal + interfacesTotal    //Calculate the unadjusted Function Point
+    G_unadjustedFPTotal = UFPtotal  //Assign it to the global variable to be used by other methods
     console.log(G_unadjustedFPTotal)
-    $('#totalUFP').val(G_unadjustedFPTotal)
+    $('#totalUFP').val(G_unadjustedFPTotal) //Place in textbox to be seen
 }
 
 function technicalComplexity() {
