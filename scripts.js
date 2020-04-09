@@ -1,6 +1,8 @@
+//import languages from '../languages.js';
+
 var G_unadjustedFPTotal = 0;
 var technical_Complexity = 0;
-
+var adjustedFP = 0;
 /**
  * This takes the user inputs and weights
  * and calculates the unadjusted function point value
@@ -87,12 +89,34 @@ function technicalComplexity() {
     userEfficiency = $('input[name="userEfficiency"]:checked').val();
     reusability = $('input[name="reusability"]:checked').val();
 
-    technical_Complexity = parseInt(communicationsRadio) + parseInt(distributedData) + parseInt(peformanceCriteria) + parseInt(heavyHardware) + parseInt(transactionRates) +
+    technicalSum = parseInt(communicationsRadio) + parseInt(distributedData) + parseInt(peformanceCriteria) + parseInt(heavyHardware) + parseInt(transactionRates) +
         parseInt(dataEntry) + parseInt(updatingRadio) + parseInt(computationsRadio) + parseInt(installation) + parseInt(operation) +
         parseInt(portability) + parseInt(maintainability) + parseInt(userEfficiency) + parseInt(reusability);
 
     console.log(technical_Complexity);
 
+    technical_Complexity = parseFloat(0.65 + ( 0.01 * technicalSum ))
+    console.log(technical_Complexity);
     $('#complexWeight').val(technical_Complexity);
 
+}
+
+function calcFP(){
+    adjustedFP = technical_Complexity * G_unadjustedFPTotal
+}
+
+function calculateDeveloperFactor(){
+
+}
+
+
+// This takes the value from the technical complexity section and multiplies it by the LOC/FP average
+// which was provided in the excel file.
+// This was completed by Andrew Castro - 000771147
+function linesOfCode(){
+    // Gets the current value of the selected radio button. This value is equal to the LOC/FP value assiociated with the programming language
+    // var checkedValue = $('input[name=languageRadio]:checked', '.form-check').val();
+    // console.log(totalLines);
+    console.log(languages);
+    //console.log("TEST")
 }
