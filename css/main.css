@@ -34,6 +34,28 @@ html {
   max-width: 1200px;
 }
 
+.container h2 {
+  margin: 50px;
+  text-align: center;
+}
+
+.container h5 {
+  /* margin: 50px; */
+  text-align: center;
+}
+
+.container hr {
+  border-top: 2px solid grey;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 25px;
+}
+
+
+/* .selected {
+  
+  color: #A8A8A8;
+} */
 
 
 
