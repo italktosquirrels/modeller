@@ -131,7 +131,7 @@
                         <input type="text" class="form-control" id="totalUFP" placeholder="" value="" disabled>
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit">Get Count</button>
+                <button class="btn btn-primary" type="button" onclick="calculateUnadjustedFP()">Get Count</button>
             </form>
 
             <!-- TECHINICAL COMPLEXITY -->
@@ -144,6 +144,10 @@
                     <div class="form-group form-group-sm col-sm-6">
                         <div class="row">
                             <label for="communicationsRadio" class="col-sm-4 col-form-label">Data Communications</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="communicationsRadio" id="communicationsRadio" value="0">
+                                <label class="form-check-label" for="inlineRadio1">0</label>
+                            </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="communicationsRadio" id="communicationsRadio" value="1">
                                 <label class="form-check-label" for="inlineRadio1">1</label>
@@ -171,6 +175,10 @@
                         <div class="row">
                             <label for="distributedData" class="col-sm-4 col-form-label">Distributed Data</label>
                             <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="distributedData" id="distributedData" value="0">
+                                <label class="form-check-label" for="inlineRadio1">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="distributedData" id="distributedData" value="1">
                                 <label class="form-check-label" for="inlineRadio1">1</label>
                             </div>
@@ -196,6 +204,10 @@
                     <div class="form-group form-group-sm col-sm-6">
                         <div class="row">
                             <label for="peformanceCriteria" class="col-sm-4 col-form-label">Performance Criteria</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="peformanceCriteria" id="peformanceCriteria" value="0">
+                                <label class="form-check-label" for="inlineRadio1">0</label>
+                            </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="peformanceCriteria" id="peformanceCriteria" value="1">
                                 <label class="form-check-label" for="inlineRadio1">1</label>
@@ -223,6 +235,10 @@
                         <div class="row">
                             <label for="heavyHardware" class="col-sm-4 col-form-label">Heavy Hardware Usage</label>
                             <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="heavyHardware" id="heavyHardware" value="0">
+                                <label class="form-check-label" for="inlineRadio1">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="heavyHardware" id="heavyHardware" value="1">
                                 <label class="form-check-label" for="inlineRadio1">1</label>
                             </div>
@@ -248,6 +264,10 @@
                     <div class="form-group form-group-sm col-sm-6">
                         <div class="row">
                             <label for="transactionRates " class="col-sm-4 col-form-label">High Transaction Rates</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="transactionRates" id="transactionRates" value="0">
+                                <label class="form-check-label" for="inlineRadio1">0</label>
+                            </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="transactionRates" id="transactionRates" value="1">
                                 <label class="form-check-label" for="inlineRadio1">1</label>
@@ -275,6 +295,10 @@
                         <div class="row">
                             <label for="dataEntry" class="col-sm-4 col-form-label">Online Data Entry</label>
                             <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dataEntry" id="dataEntry" value="0">
+                                <label class="form-check-label" for="inlineRadio1">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="dataEntry" id="dataEntry" value="1">
                                 <label class="form-check-label" for="inlineRadio1">1</label>
                             </div>
@@ -300,6 +324,10 @@
                     <div class="form-group form-group-sm col-sm-6">
                         <div class="row">
                             <label for="updatingRadio" class="col-sm-4 col-form-label">Online Updating</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="updatingRadio" id="updatingRadio" value="0">
+                                <label class="form-check-label" for="inlineRadio1">0</label>
+                            </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="updatingRadio" id="updatingRadio" value="1">
                                 <label class="form-check-label" for="inlineRadio1">1</label>
@@ -328,6 +356,10 @@
                     <div class="row">
                         <label for="computationsRadio" class="col-sm-4 col-form-label">Complex Computations</label>
                         <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="computationsRadio" id="computationsRadio" value="0">
+                            <label class="form-check-label" for="inlineRadio1">0</label>
+                        </div>
+                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="computationsRadio" id="computationsRadio" value="1">
                             <label class="form-check-label" for="inlineRadio1">1</label>
                         </div>
@@ -353,6 +385,10 @@
                 <div class="form-group form-group-sm col-sm-6">
                     <div class="row">
                         <label for="installation" class="col-sm-4 col-form-label">Ease of Installation</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="installation" id="installation" value="0">
+                            <label class="form-check-label" for="inlineRadio1">0</label>
+                        </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="installation" id="installation" value="1">
                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -380,6 +416,10 @@
                     <div class="row">
                         <label for="operation" class="col-sm-4 col-form-label">Ease of Operation</label>
                         <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="operation" id="operation" value="0">
+                            <label class="form-check-label" for="inlineRadio1">0</label>
+                        </div>
+                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="operation" id="operation" value="1">
                             <label class="form-check-label" for="inlineRadio1">1</label>
                         </div>
@@ -405,6 +445,10 @@
                 <div class="form-group form-group-sm col-sm-6">
                     <div class="row">
                         <label for="portability" class="col-sm-4 col-form-label">Portability</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="portability" id="portability" value="0">
+                            <label class="form-check-label" for="inlineRadio1">0</label>
+                        </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="portability" id="portability" value="1">
                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -432,6 +476,10 @@
                     <div class="row">
                         <label for="maintainability" class="col-sm-4 col-form-label">Maintainability</label>
                         <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="maintainability" id="maintainability" value="0">
+                            <label class="form-check-label" for="inlineRadio1">0</label>
+                        </div>
+                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="maintainability" id="maintainability" value="1">
                             <label class="form-check-label" for="inlineRadio1">1</label>
                         </div>
@@ -457,6 +505,10 @@
                 <div class="form-group form-group-sm col-sm-6">
                     <div class="row">
                         <label for="userEfficiency" class="col-sm-4 col-form-label">End-User Efficiency</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="userEfficiency" id="userEfficiency" value="0">
+                            <label class="form-check-label" for="inlineRadio1">0</label>
+                        </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="userEfficiency" id="userEfficiency" value="1">
                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -484,6 +536,10 @@
                     <div class="row">
                         <label for="reusability" class="col-sm-4 col-form-label">Reusability</label>
                         <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reusability" id="reusability" value="0">
+                            <label class="form-check-label" for="inlineRadio1">0</label>
+                        </div>
+                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="reusability" id="reusability" value="1">
                             <label class="form-check-label" for="inlineRadio1">1</label>
                         </div>
@@ -505,16 +561,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="complexWeight">Unadjusted Function Point Total</label>
+                        <input type="text" class="form-control" id="complexWeight" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="button" onclick="technicalComplexity()">Get Count</button>
+            </form>
         </div>
-        <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label for="complexTotal">Technical Complexity Total</label>
-                <input type="text" class="form-control" id="complexTotal" placeholder="" value="" disabled>
-            </div>
-        </div>
-        <button class="btn btn-primary" type="submit" onclick="technicalComplexity()">Results</button>
-        </form>
-    </div>
     </div>
 
 </body>

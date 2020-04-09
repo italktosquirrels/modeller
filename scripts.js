@@ -50,12 +50,6 @@ function calculateUnadjustedFP() {
     $('#totalUFP').val(G_unadjustedFPTotal)
 }
 
-
-
-$("#technical").submit(function(e) {
-    return false;
-});
-
 function technicalComplexity() {
     var communicationsRadio;
     var distributedData;
@@ -72,6 +66,27 @@ function technicalComplexity() {
     var userEfficiency;
     var reusability;
 
-    communicationsRadio = $('#communicationsRadio').val()
+    communicationsRadio = $('input[name="communicationsRadio"]:checked').val();
+    distributedData = $('input[name="distributedData"]:checked').val();
+    peformanceCriteria = $('input[name="peformanceCriteria"]:checked').val();
+    heavyHardware = $('input[name="heavyHardware"]:checked').val();
+    transactionRates = $('input[name="transactionRates"]:checked').val();
+    dataEntry = $('input[name="dataEntry"]:checked').val();
+    updatingRadio = $('input[name="updatingRadio"]:checked').val();
+    computationsRadio = $('input[name="computationsRadio"]:checked').val();
+    installation = $('input[name="installation"]:checked').val();
+    operation = $('input[name="operation"]:checked').val();
+    portability = $('input[name="portability"]:checked').val();
+    maintainability = $('input[name="maintainability"]:checked').val();
+    userEfficiency = $('input[name="userEfficiency"]:checked').val();
+    reusability = $('input[name="reusability"]:checked').val();
+
+    technical_Complexity = parseInt(communicationsRadio) + parseInt(distributedData) + parseInt(peformanceCriteria) + parseInt(heavyHardware) + parseInt(transactionRates) +
+        parseInt(dataEntry) + parseInt(updatingRadio) + parseInt(computationsRadio) + parseInt(installation) + parseInt(operation) +
+        parseInt(portability) + parseInt(maintainability) + parseInt(userEfficiency) + parseInt(reusability);
+
+    console.log(technical_Complexity);
+
+    $('#complexWeight').val(technical_Complexity);
 
 }
