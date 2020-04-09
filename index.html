@@ -8,6 +8,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="scripts.js"></script>
 	<!--===============================================================================================-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -24,15 +25,15 @@
 			<form>
 				<h5>COUNTS</h5>
 				<hr>
-				<!-- INPUTS -->
+				<!-- INPUTS******************************************************************************** -->
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Inputs</label>
-						<input type="number" class="form-control" id="validationDefault01" placeholder="Enter Number of User Inputs" value="" required>
+						<input type="number" class="form-control" id="numInput" placeholder="Enter Number of User Inputs" value="" min=0 required>
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Weighting Factor</label>
-						<select class="custom-select custom-select-md mb-3 selected">
+						<select id='inputWeight' class="custom-select custom-select-md mb-3 selected">
 							<option disabled selected>Select A Weighting Factor</option>
 							<option value="3">Three - 3</option>
 							<option value="4">Four - 4</option>
@@ -41,18 +42,18 @@
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Total</label>
-						<input type="text" class="form-control" id="validationDefault01" placeholder="" value="" disabled>
+						<input type="text" class="form-control" id="totalInput" placeholder="" value="" disabled>
 					</div>
 				</div>
-				<!-- OUTPUTS -->
+				<!-- OUTPUTS******************************************************************************** -->
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Outputs</label>
-						<input type="number" class="form-control" id="validationDefault01" placeholder="Enter Number of User Outputs" value="" required>
+						<input type="number" class="form-control" id="numOutput" placeholder="Enter Number of User Outputs" value="" min=0 required>
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Weighting Factor</label>
-						<select class="custom-select custom-select-md mb-3">
+						<select id='outputWeight' class="custom-select custom-select-md mb-3">
 							<option disabled selected>Select A Weighting Factor</option>
 							<option value="4">Four - 4</option>
 							<option value="5">Five - 5</option>
@@ -61,18 +62,18 @@
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Total</label>
-						<input type="text" class="form-control" id="validationDefault01" placeholder="" value="" disabled>
+						<input type="text" class="form-control" id="totalOutput" placeholder="" value="" disabled>
 					</div>
 				</div>
-				<!-- INQUIRIES -->
+				<!-- INQUIRIES******************************************************************************** -->
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Inquires</label>
-						<input type="text" class="form-control" id="validationDefault01" placeholder="Enter Number of User Inquires" value="" required>
+						<input type="number" class="form-control" id="numInquire" placeholder="Enter Number of User Inquires" value="" min=0 required>
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Weighting Factor</label>
-						<select class="custom-select custom-select-md mb-3">
+						<select id='inquireWeight' class="custom-select custom-select-md mb-3">
 							<option disabled selected>Select A Weighting Factor</option>
 							<option value="3">Three - 3</option>
 							<option value="4">Four - 4</option>
@@ -81,18 +82,18 @@
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Total</label>
-						<input type="text" class="form-control" id="validationDefault01" placeholder="" value="" disabled>
+						<input type="text" class="form-control" id="totalInquire" placeholder="" value="" disabled>
 					</div>
 				</div>
-				<!-- FILES -->
+				<!-- FILES******************************************************************************** -->
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Files</label>
-						<input type="text" class="form-control" id="validationDefault01" placeholder="Enter Number of Files" value="" required>
+						<input type="number" class="form-control" id="numFile" placeholder="Enter Number of Files" value="" min=0 required>
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Weighting Factor</label>
-						<select class="custom-select custom-select-md mb-3">
+						<select id='fileWeight' class="custom-select custom-select-md mb-3">
 							<option disabled selected>Select A Weighting Factor</option>
 							<option value="7">Seven - 7</option>
 							<option value="10">Ten - 10</option>
@@ -101,18 +102,18 @@
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Total</label>
-						<input type="text" class="form-control" id="validationDefault01" placeholder="" value="" disabled>
+						<input type="text" class="form-control" id="totalFile" placeholder="" value="" disabled>
 					</div>
 				</div>
-				<!-- EXTERNAL INTERFACES -->
+				<!-- EXTERNAL INTERFACES***************************************************************** -->
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">External Interfaces</label>
-						<input type="text" class="form-control" id="validationDefault01" placeholder="Enter Number of External Interfaces" value="" required>
+						<input type="number" class="form-control" id="numInterface" placeholder="Enter Number of External Interfaces" value="" min=0 required>
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Weighting Factor</label>
-						<select class="custom-select custom-select-md mb-3">
+						<select id='interfacesWeight' class="custom-select custom-select-md mb-3">
 							<option disabled selected>Select A Weighting Factor</option>
 							<option value="5">Five - 5</option>
 							<option value="7">Seven - 7</option>
@@ -121,7 +122,13 @@
 					</div>
 					<div class="col-md-4 mb-3">
 						<label for="validationDefault01">Total</label>
-						<input type="text" class="form-control" id="validationDefault01" placeholder="" value="" disabled>
+						<input type="text" class="form-control" id="totalInterface" placeholder="" value="" disabled>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Unadjusted Function Point Total</label>
+						<input type="text" class="form-control" id="totalUFP" placeholder="" value="" disabled>
 					</div>
 				</div>
 				<!-- TECHINICAL COMPLEXITY -->
