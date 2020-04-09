@@ -135,7 +135,7 @@
             </form>
 
             <!-- TECHINICAL COMPLEXITY -->
-            <form id="technical">
+            <form>
                 <div>
                     <h5>TECHINICAL COMPLEXITY</h5>
                     <h6>[0= ]</h6>
@@ -570,13 +570,13 @@
 
         <!--Andrew-->
         <h5>LOC/FP</h5>
-        <hr>    
+        <hr>
         <p style="text-align: center;">Select a language from the dropdown to calculate a LOC using historical data:</p>
         <div class="form-group">
             <label for="sel1">Select list:</label>
             <select class="form-control" id="sel1">
             </select>
-          </div>
+        </div>
         <input type="text" class="form-control" id="totalLOC" placeholder="" value="" disabled="" style="width: 200px; margin-bottom: 20px">
         <button type="button" class="btn btn-primary" onclick="linesOfCode()">Show LOC/FP</button>
 
@@ -616,7 +616,7 @@
                     <input type="text" class="form-control" id="totalInterface" placeholder="" value="" disabled>
                 </div>
             </div>
-           
+
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Project Developer Factor</label>
@@ -625,8 +625,100 @@
             </div>
             <button class="btn btn-primary" type="button" onclick="calculateDeveloperFactor()">Get Count</button>
         </form>
-    </div>
-    </div>
+        <!-- Company Benefits -->
+        <form>
+            <div>
+                <h5>COMPANY BENEFITS</h5>
+                <hr>
+                <!-- Allowed Remote Work Days -->
+                <div class="row">
+                    <label for="remoteWork" class="col-sm-4 col-form-label">Allowed Remote Work Days</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="0" checked>
+                        <label class="form-check-label" for="inlineRadio1">0</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="2">
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="3">
+                        <label class="form-check-label" for="inlineRadio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="4">
+                        <label class="form-check-label" for="inlineRadio1">4</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="5">
+                        <label class="form-check-label" for="inlineRadio1">5</label>
+                    </div>
+                </div>
+                <!--- Number of Days Work Provides Lunches --->
+                <div class="row">
+                    <label for="workLunch" class="col-sm-4 col-form-label">Number of Days Work Provides Lunch</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="0" checked>
+                        <label class="form-check-label" for="inlineRadio1">0</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="2">
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="3">
+                        <label class="form-check-label" for="inlineRadio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="4">
+                        <label class="form-check-label" for="inlineRadio1">4</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="5">
+                        <label class="form-check-label" for="inlineRadio1">5</label>
+                    </div>
+                </div>
+                <!--- Does your work provide Snacks?--->
+                <div class="row">
+                    <label for="workSnacks" class="col-sm-4 col-form-label">Workplace Provided Snacks</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workSnacks" id="workSnacks" value="0" checked>
+                        <label class="form-check-label" for="inlineRadio1">No</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workSnacks" id="workSnacks" value="3">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                </div>
+                <!--- Flex Hours --->
+                <div class="row">
+                    <label for="flexHours" class="col-sm-4 col-form-label">Flex Hours</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexHours" id="flexHours" value="0" checked>
+                        <label class="form-check-label" for="inlineRadio1">No</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexHours" id="flexHours" value="3">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="benefitsText">Total</label>
+                        <input type="text" class="form-control" id="benefitsText" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="button" onclick="companyBenefits()">Show Company Benefits Weight</button>
+        </form>
+        </div>
 
 </body>
 
