@@ -2,275 +2,520 @@
 <html lang="en">
 
 <head>
-	<title>Contact V7</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="scripts.js"></script>
-	<!--===============================================================================================-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!--===============================================================================================-->
+    <title>Contact V7</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
 </head>
 
 <body>
-	<div class="container">
-		<div>
-			<h2>COCOMO Metrics Modeller</h2>
+    <div class="container">
+        <div>
+            <h2>COCOMO Metrics Modeller</h2>
 
-		</div>
-		<div class="">
-			<form>
-				<h5>COUNTS</h5>
-				<hr>
-				<!-- INPUTS******************************************************************************** -->
-				<div class="form-row">
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Inputs</label>
-						<input type="number" class="form-control" id="numInput" placeholder="Enter Number of User Inputs" value="" min=0 required>
-					</div>
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Weighting Factor</label>
-						<select id='inputWeight' class="custom-select custom-select-md mb-3 selected">
+        </div>
+        <div class="">
+            <form>
+                <h5>COUNTS</h5>
+                <hr>
+                <!-- INPUTS******************************************************************************** -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Inputs</label>
+                        <input type="number" class="form-control" id="numInput" placeholder="Enter Number of User Inputs" value="" min=0 required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Weighting Factor</label>
+                        <select id='inputWeight' class="custom-select custom-select-md mb-3 selected">
 							<option disabled selected>Select A Weighting Factor</option>
 							<option value="3">Three - 3</option>
 							<option value="4">Four - 4</option>
 							<option value="6">Six - 6</option>
 						</select>
-					</div>
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Total</label>
-						<input type="text" class="form-control" id="totalInput" placeholder="" value="" disabled>
-					</div>
-				</div>
-				<!-- OUTPUTS******************************************************************************** -->
-				<div class="form-row">
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Outputs</label>
-						<input type="number" class="form-control" id="numOutput" placeholder="Enter Number of User Outputs" value="" min=0 required>
-					</div>
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Weighting Factor</label>
-						<select id='outputWeight' class="custom-select custom-select-md mb-3">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Total</label>
+                        <input type="text" class="form-control" id="totalInput" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <!-- OUTPUTS******************************************************************************** -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Outputs</label>
+                        <input type="number" class="form-control" id="numOutput" placeholder="Enter Number of User Outputs" value="" min=0 required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Weighting Factor</label>
+                        <select id='outputWeight' class="custom-select custom-select-md mb-3">
 							<option disabled selected>Select A Weighting Factor</option>
 							<option value="4">Four - 4</option>
 							<option value="5">Five - 5</option>
 							<option value="7">Seven -7</option>
 						</select>
-					</div>
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Total</label>
-						<input type="text" class="form-control" id="totalOutput" placeholder="" value="" disabled>
-					</div>
-				</div>
-				<!-- INQUIRIES******************************************************************************** -->
-				<div class="form-row">
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Inquires</label>
-						<input type="number" class="form-control" id="numInquire" placeholder="Enter Number of User Inquires" value="" min=0 required>
-					</div>
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Weighting Factor</label>
-						<select id='inquireWeight' class="custom-select custom-select-md mb-3">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Total</label>
+                        <input type="text" class="form-control" id="totalOutput" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <!-- INQUIRIES******************************************************************************** -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Inquires</label>
+                        <input type="number" class="form-control" id="numInquire" placeholder="Enter Number of User Inquires" value="" min=0 required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Weighting Factor</label>
+                        <select id='inquireWeight' class="custom-select custom-select-md mb-3">
 							<option disabled selected>Select A Weighting Factor</option>
 							<option value="3">Three - 3</option>
 							<option value="4">Four - 4</option>
 							<option value="6">Six - 6</option>
 						</select>
-					</div>
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Total</label>
-						<input type="text" class="form-control" id="totalInquire" placeholder="" value="" disabled>
-					</div>
-				</div>
-				<!-- FILES******************************************************************************** -->
-				<div class="form-row">
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Files</label>
-						<input type="number" class="form-control" id="numFile" placeholder="Enter Number of Files" value="" min=0 required>
-					</div>
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Weighting Factor</label>
-						<select id='fileWeight' class="custom-select custom-select-md mb-3">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Total</label>
+                        <input type="text" class="form-control" id="totalInquire" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <!-- FILES******************************************************************************** -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Files</label>
+                        <input type="number" class="form-control" id="numFile" placeholder="Enter Number of Files" value="" min=0 required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Weighting Factor</label>
+                        <select id='fileWeight' class="custom-select custom-select-md mb-3">
 							<option disabled selected>Select A Weighting Factor</option>
 							<option value="7">Seven - 7</option>
 							<option value="10">Ten - 10</option>
 							<option value="15">Fifteen - 15</option>
 						</select>
-					</div>
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Total</label>
-						<input type="text" class="form-control" id="totalFile" placeholder="" value="" disabled>
-					</div>
-				</div>
-				<!-- EXTERNAL INTERFACES***************************************************************** -->
-				<div class="form-row">
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">External Interfaces</label>
-						<input type="number" class="form-control" id="numInterface" placeholder="Enter Number of External Interfaces" value="" min=0 required>
-					</div>
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Weighting Factor</label>
-						<select id='interfacesWeight' class="custom-select custom-select-md mb-3">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Total</label>
+                        <input type="text" class="form-control" id="totalFile" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <!-- EXTERNAL INTERFACES***************************************************************** -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">External Interfaces</label>
+                        <input type="number" class="form-control" id="numInterface" placeholder="Enter Number of External Interfaces" value="" min=0 required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Weighting Factor</label>
+                        <select id='interfacesWeight' class="custom-select custom-select-md mb-3">
 							<option disabled selected>Select A Weighting Factor</option>
 							<option value="5">Five - 5</option>
 							<option value="7">Seven - 7</option>
 							<option value="10">Ten - 10</option>
 						</select>
-					</div>
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Total</label>
-						<input type="text" class="form-control" id="totalInterface" placeholder="" value="" disabled>
-					</div>
-				</div>
-				<div class="form-row">
-					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">Unadjusted Function Point Total</label>
-						<input type="text" class="form-control" id="totalUFP" placeholder="" value="" disabled>
-					</div>
-				</div>
-				<button class="btn btn-primary" type="submit">Get Count</button>
-			</form>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Total</label>
+                        <input type="text" class="form-control" id="totalInterface" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Unadjusted Function Point Total</label>
+                        <input type="text" class="form-control" id="totalUFP" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Get Count</button>
+            </form>
 
-			<!-- TECHINICAL COMPLEXITY -->
-			<form>
-				<div>
-					<h5>TECHINICAL COMPLEXITY</h5>
-					<h6>[0= ]</h6>
-					<hr>
-					<!-- DATA COMMUNICATIONS -->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="data_communications" class="col-sm-4 col-form-label">Data Communications</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="data_communications" name="data_communications" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- DISTRIBUTED DATA-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="distributed_data" class="col-sm-4 col-form-label">Distributed Data</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="distributed_data" name="distributed_data" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- PERFORMANCE CRITERIA-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="performance_criteria" class="col-sm-4 col-form-label">Performance Criteria</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="performance_criteria" name="performance_criteria" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- HEAVY HARDWARE USAGE-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="heavy_hardware_usage" class="col-sm-4 col-form-label">Heavy Hardware Usage</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="heavy_hardware_usage" name="heavy_hardware_usage" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- HIGH TRANSACTION RATES-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="high_transaction_rates " class="col-sm-4 col-form-label">High Transaction Rates</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="high_transaction_rates" name="high_transaction_rates" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- ONLINE DATA ENTRY-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="online_data_entry" class="col-sm-4 col-form-label">Online Data Entry</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="online_data_entry" name="online_data_entry" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- ONLINE UPDATING-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="online_updating" class="col-sm-4 col-form-label">Online Updating</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="online_updating" name="online_updating" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- COMPLEX COMPUTATIONS-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="complex_computations" class="col-sm-4 col-form-label">Complex Computations</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="complex_computations" name="complex_computations" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- EASE OF INSTALLATION-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="ease_of_installation" class="col-sm-4 col-form-label">Ease of Installation</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="ease_of_installation" name="ease_of_installation" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- EASE OF OPERATON-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="ease_of_operation" class="col-sm-4 col-form-label">Ease of Operation</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="ease_of_operation" name="ease_of_operation" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- PORTABILITY-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="portability" class="col-sm-4 col-form-label">Portability</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="portability" name="portability" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- MAINTAINABILITY-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="maintainability" class="col-sm-4 col-form-label">Maintainability</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="maintainability" name="maintainability" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- END-USER EFFICIENCY-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="end_user_efficiency" class="col-sm-4 col-form-label">End-User Efficiency</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="end_user_efficiency" name="end_user_efficiency" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-					<!-- REUSABILITY-->
-					<div class="form-group form-group-sm col-sm-6">
-						<div class="row">
-							<label for="reusability" class="col-sm-4 col-form-label">Reusability</label>
-							<div class="col-sm-3">
-								<input type="number" class="form-control" id="reusability" name="reusability" min="0" max="5" required>
-							</div>
-						</div>
-					</div>
-				</div>
-				<button class="btn btn-primary" type="submit">Results</button>
-			</form>
-		</div>
-	</div>
+            <!-- TECHINICAL COMPLEXITY -->
+            <form id="technical">
+                <div>
+                    <h5>TECHINICAL COMPLEXITY</h5>
+                    <h6>[0= ]</h6>
+                    <hr>
+                    <!-- DATA COMMUNICATIONS -->
+                    <div class="form-group form-group-sm col-sm-6">
+                        <div class="row">
+                            <label for="communicationsRadio" class="col-sm-4 col-form-label">Data Communications</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="communicationsRadio" id="communicationsRadio" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="communicationsRadio" id="communicationsRadio" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="communicationsRadio" id="communicationsRadio" value="3">
+                                <label class="form-check-label" for="inlineRadio1">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="communicationsRadio" id="communicationsRadio" value="4">
+                                <label class="form-check-label" for="inlineRadio1">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="communicationsRadio" id="communicationsRadio" value="5">
+                                <label class="form-check-label" for="inlineRadio1">5</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DISTRIBUTED DATA-->
+                    <div class="form-group form-group-sm col-sm-6">
+                        <div class="row">
+                            <label for="distributedData" class="col-sm-4 col-form-label">Distributed Data</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="distributedData" id="distributedData" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="distributedData" id="distributedData" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="distributedData" id="distributedData" value="3">
+                                <label class="form-check-label" for="inlineRadio1">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="distributedData" id="distributedData" value="4">
+                                <label class="form-check-label" for="inlineRadio1">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="distributedData" id="distributedData" value="5">
+                                <label class="form-check-label" for="inlineRadio1">5</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PERFORMANCE CRITERIA-->
+                    <div class="form-group form-group-sm col-sm-6">
+                        <div class="row">
+                            <label for="peformanceCriteria" class="col-sm-4 col-form-label">Performance Criteria</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="peformanceCriteria" id="peformanceCriteria" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="peformanceCriteria" id="peformanceCriteria" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="peformanceCriteria" id="peformanceCriteria" value="3">
+                                <label class="form-check-label" for="inlineRadio1">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="peformanceCriteria" id="peformanceCriteria" value="4">
+                                <label class="form-check-label" for="inlineRadio1">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="peformanceCriteria" id="peformanceCriteria" value="5">
+                                <label class="form-check-label" for="inlineRadio1">5</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- HEAVY HARDWARE USAGE-->
+                    <div class="form-group form-group-sm col-sm-6">
+                        <div class="row">
+                            <label for="heavyHardware" class="col-sm-4 col-form-label">Heavy Hardware Usage</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="heavyHardware" id="heavyHardware" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="heavyHardware" id="heavyHardware" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="heavyHardware" id="heavyHardware" value="3">
+                                <label class="form-check-label" for="inlineRadio1">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="heavyHardware" id="heavyHardware" value="4">
+                                <label class="form-check-label" for="inlineRadio1">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="heavyHardware" id="heavyHardware" value="5">
+                                <label class="form-check-label" for="inlineRadio1">5</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- HIGH TRANSACTION RATES-->
+                    <div class="form-group form-group-sm col-sm-6">
+                        <div class="row">
+                            <label for="transactionRates " class="col-sm-4 col-form-label">High Transaction Rates</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="transactionRates" id="transactionRates" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="transactionRates" id="transactionRates" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="transactionRates" id="transactionRates" value="3">
+                                <label class="form-check-label" for="inlineRadio1">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="transactionRates" id="transactionRates" value="4">
+                                <label class="form-check-label" for="inlineRadio1">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="transactionRates" id="transactionRates" value="5">
+                                <label class="form-check-label" for="inlineRadio1">5</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ONLINE DATA ENTRY-->
+                    <div class="form-group form-group-sm col-sm-6">
+                        <div class="row">
+                            <label for="dataEntry" class="col-sm-4 col-form-label">Online Data Entry</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dataEntry" id="dataEntry" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dataEntry" id="dataEntry" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dataEntry" id="dataEntry" value="3">
+                                <label class="form-check-label" for="inlineRadio1">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dataEntry" id="dataEntry" value="4">
+                                <label class="form-check-label" for="inlineRadio1">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dataEntry" id="dataEntry" value="5">
+                                <label class="form-check-label" for="inlineRadio1">5</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ONLINE UPDATING-->
+                    <div class="form-group form-group-sm col-sm-6">
+                        <div class="row">
+                            <label for="updatingRadio" class="col-sm-4 col-form-label">Online Updating</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="updatingRadio" id="updatingRadio" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="updatingRadio" id="updatingRadio" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="updatingRadio" id="updatingRadio" value="3">
+                                <label class="form-check-label" for="inlineRadio1">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="updatingRadio" id="updatingRadio" value="4">
+                                <label class="form-check-label" for="inlineRadio1">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="updatingRadio" id="updatingRadio" value="5">
+                                <label class="form-check-label" for="inlineRadio1">5</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- COMPLEX COMPUTATIONS-->
+                <div class="form-group form-group-sm col-sm-6">
+                    <div class="row">
+                        <label for="computationsRadio" class="col-sm-4 col-form-label">Complex Computations</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="computationsRadio" id="computationsRadio" value="1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="computationsRadio" id="computationsRadio" value="2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="computationsRadio" id="computationsRadio" value="3">
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="computationsRadio" id="computationsRadio" value="4">
+                            <label class="form-check-label" for="inlineRadio1">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="computationsRadio" id="computationsRadio" value="5">
+                            <label class="form-check-label" for="inlineRadio1">5</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- EASE OF INSTALLATION-->
+                <div class="form-group form-group-sm col-sm-6">
+                    <div class="row">
+                        <label for="installation" class="col-sm-4 col-form-label">Ease of Installation</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="installation" id="installation" value="1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="installation" id="installation" value="2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="installation" id="installation" value="3">
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="installation" id="installation" value="4">
+                            <label class="form-check-label" for="inlineRadio1">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="installation" id="installation" value="5">
+                            <label class="form-check-label" for="inlineRadio1">5</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- EASE OF OPERATON-->
+                <div class="form-group form-group-sm col-sm-6">
+                    <div class="row">
+                        <label for="operation" class="col-sm-4 col-form-label">Ease of Operation</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="operation" id="operation" value="1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="operation" id="operation" value="2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="operation" id="operation" value="3">
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="operation" id="operation" value="4">
+                            <label class="form-check-label" for="inlineRadio1">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="operation" id="operation" value="5">
+                            <label class="form-check-label" for="inlineRadio1">5</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- PORTABILITY-->
+                <div class="form-group form-group-sm col-sm-6">
+                    <div class="row">
+                        <label for="portability" class="col-sm-4 col-form-label">Portability</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="portability" id="portability" value="1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="portability" id="portability" value="2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="portability" id="portability" value="3">
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="portability" id="portability" value="4">
+                            <label class="form-check-label" for="inlineRadio1">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="portability" id="portability" value="5">
+                            <label class="form-check-label" for="inlineRadio1">5</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- MAINTAINABILITY-->
+                <div class="form-group form-group-sm col-sm-6">
+                    <div class="row">
+                        <label for="maintainability" class="col-sm-4 col-form-label">Maintainability</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="maintainability" id="maintainability" value="1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="maintainability" id="maintainability" value="2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="maintainability" id="maintainability" value="3">
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="maintainability" id="maintainability" value="4">
+                            <label class="form-check-label" for="inlineRadio1">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="maintainability" id="maintainability" value="5">
+                            <label class="form-check-label" for="inlineRadio1">5</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- END-USER EFFICIENCY-->
+                <div class="form-group form-group-sm col-sm-6">
+                    <div class="row">
+                        <label for="userEfficiency" class="col-sm-4 col-form-label">End-User Efficiency</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="userEfficiency" id="userEfficiency" value="1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="userEfficiency" id="userEfficiency" value="2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="userEfficiency" id="userEfficiency" value="3">
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="userEfficiency" id="userEfficiency" value="4">
+                            <label class="form-check-label" for="inlineRadio1">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="userEfficiency" id="userEfficiency" value="5">
+                            <label class="form-check-label" for="inlineRadio1">5</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- REUSABILITY-->
+                <div class="form-group form-group-sm col-sm-6">
+                    <div class="row">
+                        <label for="reusability" class="col-sm-4 col-form-label">Reusability</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reusability" id="reusability" value="1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reusability" id="reusability" value="2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reusability" id="reusability" value="3">
+                            <label class="form-check-label" for="inlineRadio1">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reusability" id="reusability" value="4">
+                            <label class="form-check-label" for="inlineRadio1">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reusability" id="reusability" value="5">
+                            <label class="form-check-label" for="inlineRadio1">5</label>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="complexTotal">Technical Complexity Total</label>
+                <input type="text" class="form-control" id="complexTotal" placeholder="" value="" disabled>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" onclick="technicalComplexity()">Results</button>
+        </form>
+    </div>
+    </div>
 
 </body>
 
