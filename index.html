@@ -5,26 +5,11 @@
 	<title>Contact V7</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!--===============================================================================================-->
 </head>
@@ -37,37 +22,106 @@
 		</div>
 		<div class="">
 			<form>
+				<h5>COUNTS</h5>
+				<hr>
+				<!-- INPUTS -->
 				<div class="form-row">
 					<div class="col-md-4 mb-3">
-						<label for="validationDefault01">First name</label>
-						<input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Mark" required>
+						<label for="validationDefault01">Inputs</label>
+						<input type="number" class="form-control" id="validationDefault01" placeholder="Enter Number of User Inputs" value="" required>
 					</div>
 					<div class="col-md-4 mb-3">
-						<label for="validationDefault02">Last name</label>
-						<input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Otto" required>
+						<label for="validationDefault01">Weighting Factor</label>
+						<select class="custom-select custom-select-md mb-3 selected">
+							<option disabled selected>Select A Weighting Factor</option>
+							<option value="3">Three - 3</option>
+							<option value="4">Four - 4</option>
+							<option value="6">Six - 6</option>
+						</select>
 					</div>
 					<div class="col-md-4 mb-3">
-						<label for="validationDefaultUsername">Username</label>
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="inputGroupPrepend2">@</span>
-							</div>
-							<input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
-						</div>
+						<label for="validationDefault01">Total</label>
+						<input type="text" class="form-control" id="validationDefault01" placeholder="" value="" disabled>
 					</div>
 				</div>
+				<!-- OUTPUTS -->
 				<div class="form-row">
-					<div class="col-md-6 mb-3">
-						<label for="validationDefault03">City</label>
-						<input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Outputs</label>
+						<input type="number" class="form-control" id="validationDefault01" placeholder="Enter Number of User Outputs" value="" required>
 					</div>
-					<div class="col-md-3 mb-3">
-						<label for="validationDefault04">State</label>
-						<input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Weighting Factor</label>
+						<select class="custom-select custom-select-md mb-3">
+							<option disabled selected>Select A Weighting Factor</option>
+							<option value="4">Four - 4</option>
+							<option value="5">Five - 5</option>
+							<option value="7">Seven -7</option>
+						</select>
 					</div>
-					<div class="col-md-3 mb-3">
-						<label for="validationDefault05">Zip</label>
-						<input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Total</label>
+						<input type="text" class="form-control" id="validationDefault01" placeholder="" value="" disabled>
+					</div>
+				</div>
+				<!-- INQUIRIES -->
+				<div class="form-row">
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Inquires</label>
+						<input type="text" class="form-control" id="validationDefault01" placeholder="Enter Number of User Inquires" value="" required>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Weighting Factor</label>
+						<select class="custom-select custom-select-md mb-3">
+							<option disabled selected>Select A Weighting Factor</option>
+							<option value="3">Three - 3</option>
+							<option value="4">Four - 4</option>
+							<option value="6">Six - 6</option>
+						</select>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Total</label>
+						<input type="text" class="form-control" id="validationDefault01" placeholder="" value="" disabled>
+					</div>
+				</div>
+				<!-- FILES -->
+				<div class="form-row">
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Files</label>
+						<input type="text" class="form-control" id="validationDefault01" placeholder="Enter Number of Files" value="" required>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Weighting Factor</label>
+						<select class="custom-select custom-select-md mb-3">
+							<option disabled selected>Select A Weighting Factor</option>
+							<option value="7">Seven - 7</option>
+							<option value="10">Ten - 10</option>
+							<option value="15">Fifteen - 15</option>
+						</select>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Total</label>
+						<input type="text" class="form-control" id="validationDefault01" placeholder="" value="" disabled>
+					</div>
+				</div>
+				<!-- EXTERNAL INTERFACES -->
+				<div class="form-row">
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">External Interfaces</label>
+						<input type="text" class="form-control" id="validationDefault01" placeholder="Enter Number of External Interfaces" value="" required>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Weighting Factor</label>
+						<select class="custom-select custom-select-md mb-3">
+							<option disabled selected>Select A Weighting Factor</option>
+							<option value="5">Five - 5</option>
+							<option value="7">Seven - 7</option>
+							<option value="10">Ten - 10</option>
+						</select>
+					</div>
+					<div class="col-md-4 mb-3">
+						<label for="validationDefault01">Total</label>
+						<input type="text" class="form-control" id="validationDefault01" placeholder="" value="" disabled>
 					</div>
 				</div>
 
