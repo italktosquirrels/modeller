@@ -583,47 +583,50 @@
         <form>
             <h5>DEVELOPERS</h5>
             <hr>
+            <h6>By Alex Watson</h6>
+            <h6>This section determines a speed multiplyer based on the projects developer breakdown</h6>
+            <hr>
             <!-- INPUTS******************************************************************************** -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Number of Junior Developers</label>
-                    <input type="number" class="form-control" id="numInput" placeholder="Enter Number of User Inputs" value="" min=0 required>
+                    <input type="number" class="form-control" id="numJunior" placeholder="Enter Number of Junior Developers" value="" min=0 required>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Total</label>
-                    <input type="text" class="form-control" id="totalInterface" placeholder="" value="" disabled>
+                    <input type="text" class="form-control" id="totalJunior" placeholder="" value="" disabled>
                 </div>
             </div>
             <!-- OUTPUTS******************************************************************************** -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Number of Intermediate Developers</label>
-                    <input type="number" class="form-control" id="numOutput" placeholder="Enter Number of User Outputs" value="" min=0 required>
+                    <input type="number" class="form-control" id="numIntermediate" placeholder="Enter Number of Intermediate Developers" value="" min=0 required>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Total</label>
-                    <input type="text" class="form-control" id="totalInterface" placeholder="" value="" disabled>
+                    <input type="text" class="form-control" id="totalIntermediate" placeholder="" value="" disabled>
                 </div>
             </div>
             <!-- INQUIRIES******************************************************************************** -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Number of Senior Developers</label>
-                    <input type="number" class="form-control" id="numInquire" placeholder="Enter Number of User Inquires" value="" min=0 required>
+                    <input type="number" class="form-control" id="numSenior" placeholder="Enter Number of Senior Developers" value="" min=0 required>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Total</label>
-                    <input type="text" class="form-control" id="totalInterface" placeholder="" value="" disabled>
+                    <input type="text" class="form-control" id="totalSenior" placeholder="" value="" disabled>
                 </div>
             </div>
            
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                    <label for="validationDefault01">Project Developer Factor</label>
+                    <label for="validationDefault01"> Developer Speed Factor</label>
                     <input type="text" class="form-control" id="projectDeveloperFactor" placeholder="" value="" disabled>
                 </div>
             </div>
-            <button class="btn btn-primary" type="button" onclick="calculateDeveloperFactor()">Get Count</button>
+            <button class="btn btn-primary" type="button" onclick="calculateDeveloperSpeedFactor()">Determine </button>
         </form>
     </div>
     </div>

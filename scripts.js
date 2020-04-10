@@ -105,8 +105,57 @@ function calcFP(){
     adjustedFP = technical_Complexity * G_unadjustedFPTotal
 }
 
-function calculateDeveloperFactor(){
+/**
+ * This caclulates a speed factor for the project based on the 
+ * developer breakdown
+ * This is developed by Alexander Watson, 001197775
+ */
+function calculateDeveloperSpeedFactor(){
+    jNum = 0
+    iNum = 0
+    sNum = 0
+    totalDevNum = 0.0
 
+    jWeight = 1     //Junior Dev's weight  
+    iWeight = 1.2   //Intermediate Dev's weight
+    sWeight = 1.5   //Senior Dev's Weight
+
+    //Grab all the numbers from the input
+    jNum = $('#numJunior').val()
+    iNum = $('#numIntermediate').val()
+    sNum = $('#numSenior').val()
+
+    //Calculate the total number of developers
+    totalDevNum = parseFloat(jNum) + parseFloat(iNum) + parseFloat(sNum)
+    console.log(totalDevNum)
+    
+    //Multiply the number of devs by their respective weights
+    newJuniorWeight = jNum * jWeight
+    newIntermediateWeight = iNum * iWeight
+    newSeniorWeight = sNum * sWeight
+    // newJuniorWeight = Math.pow(jNum,sWeight)
+    // newIntermediateWeight = Math.pow(iNum, iWeight)
+    // newSeniorWeight = Math.pow(sNum, jWeight)
+    //Assign their new factors to the page
+    $("#totalJunior").val(newJuniorWeight)
+    $("#totalIntermediate").val(newIntermediateWeight)
+    $("#totalSenior").val(newSeniorWeight)
+    
+    //Calculate the total factor of all the devs
+    totalDev = parseFloat(newJuniorWeight) + parseFloat(newIntermediateWeight) + parseFloat(newSeniorWeight)
+    console.log(totalDev)
+
+    //Devide the total factor by the numer of devs
+    newFactor = parseFloat(totalDev / totalDevNum)
+    x = 1 - newFactor
+    console.log(newFactor)
+    //Making sure the minimum multipluer is at least 1
+    //and place it in the output box
+    if( isNaN(newFactor) ){
+        $("#projectDeveloperFactor").val(1)
+    }else{
+    $("#projectDeveloperFactor").val(newFactor)
+    }
 }
 
 
