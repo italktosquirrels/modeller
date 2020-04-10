@@ -1,9 +1,8 @@
-//import languages from '../languages.js';
-
 var G_unadjustedFPTotal = 0;
 var technical_Complexity = 0;
 var company_Benefits = 0;
-var adjustedFP = 0;
+var adjustedFP = 0
+var technicalSum = 0;
 /**
  * This takes the user inputs and weights
  * and calculates the unadjusted function point value
@@ -217,10 +216,128 @@ function calculateSmokingFactor() {
 // This takes the value from the technical complexity section and multiplies it by the LOC/FP average
 // which was provided in the excel file.
 // This was completed by Andrew Castro - 000771147
-function linesOfCode() {
-    // Gets the current value of the selected radio button. This value is equal to the LOC/FP value assiociated with the programming language
-    // var checkedValue = $('input[name=languageRadio]:checked', '.form-check').val();
-    // console.log(totalLines);
-    console.log(languages);
-    //console.log("TEST")
+function linesOfCode(){
+    var locValue = $('#sel1').val();
+    var totalLoc = technicalSum * locValue;
+    var displayLoc = totalLoc.toFixed(2);
+    $('#totalLOC').val(displayLoc);
+}
+
+// This function runs on page load, it reads a JSON object which was exported from the
+// provided excel file and populates the dropdown in the LOC/FP section so we can use hisotrical data
+// accurately with many more options than if we hand picked some.
+// This was completed by Andrew Castro - 000771147
+$( document ).ready(function() {
+    // parse the JSON
+    var mydata = JSON.parse(data);
+    // Selecting the dropdown
+    var select = document.getElementById("sel1");
+    // Loop through the JSON object
+    for(var i = mydata.length -1; i > 0; i--) {
+        var option = document.createElement('option');
+        // Setting the text value to the language name
+        option.text = mydata[i].LANGUAGE;
+        // Setting the value of the option to the LOC/FP score provided.
+        option.value = mydata[i]["LOC/FP (AVERAGE SOURCE STATEMENTS PER FUNCTION POINT)"];
+        // Adding the new option to the dropdown
+        select.add(option, 0);
+    }
+});
+
+// This function runs when Get Factor is clicked in the section "Time Lost to Breaks"
+// the purpose of this function is to calculate the total time lost to breaks
+// when factoring in mandated 30 minute lunches and optional 15 minute breaks. 
+// This will give the project manager a better idea of total scope when planning for time
+// This was completed by Andrew Castro - 000771147
+function calculateBreaks(){
+    // Get number of employees from input
+    var employees = $('#number_of_employees').val();
+    // Get number of allowed 15 minute breaks from input
+    var fifteenMinBreaks = $('#number_of_15').val();
+    // Get project length in days from the input
+    var projectLength = $('#project_length_breaks').val();
+    // Calculate Lunch hours lost
+    var lunch = employees * 30;
+    // Calculate break hours lost 
+    var breakTime = (fifteenMinBreaks * 15) * (employees) + lunch;
+    // Calculate break hours lost total factoring in project length
+    var totalMinsLost = breakTime * projectLength;
+    // Convert to total days
+    var daysLost = totalMinsLost / 1440;
+    $('#time_lost_results').val(daysLost.toFixed(2));
+}
+
+
+// Andrews Dolihan 
+// This functions calculates the effort based on the users LOC in the previous section
+// It also calulates the Duration using the Effort and displays it to the user
+function calcE()
+{
+	
+	var E = 0 // The Effor
+	var D = 0 // THe Duration
+	var LOC = $('#totalLOC').val(); // The Lines of Code
+	
+	
+	// When the user clicks the Submit button it will calculate Effort/Duration based on the radio button selected
+	$('#submitEffort').click(function() { 
+		
+		if($('#organic').is(' :checked')) // If 'organic' is selected
+		{
+			
+			E = 2.4 * Math.pow(LOC /1000,1.05);
+			D = 2.5 * Math.pow(E,0.38)
+			$('#effortAnswer').val(E.toFixed(2));
+			$('#durationAnswer').val(D.toFixed(2));
+				
+		}
+		else if($('#semi-detached').is(' :checked')) // If 'semi-detached' is selected
+		{
+			
+			E =3.0 * Math.pow(LOC /1000,1.12);
+			D = 2.5 * Math.pow(E,0.35)
+			$('#effortAnswer').val(E.toFixed(2));
+			$('#durationAnswer').val(D.toFixed(2));
+				
+		}	
+		else if($('#embedded').is(' :checked')) // If 'embedded' is selected
+		{
+			
+			E =3.6 * Math.pow(LOC /1000, 1.20);
+			D = 2.5 * Math.pow(E,0.32);
+			$('#effortAnswer').val(E.toFixed(2));
+			$('#durationAnswer').val(D.toFixed(2));
+				
+		}	
+		else
+		{
+			
+			alert("Please select a project type");
+		}
+	
+	
+	});
+
+
+}
+
+
+// This function shows the percantage increase that an employee is more willing to be more productive
+
+function showValue()
+{
+	
+	
+	$('#getValue').click(function() { // When the button is clicked, grap and add up the values of the radio buttons selected
+		
+		var question_1 = parseInt($('input[name = q1RadioBtn]:checked').val());
+		var question_2 = parseInt($('input[name = q2RadioBtn]:checked').val());
+		var question_3 = parseInt($('input[name = q3RadioBtn]:checked').val());
+		var question_4 = parseInt($('input[name = q4RadioBtn]:checked').val());
+		var total = question_1 + question_2 + question_3 + question_4;
+		total = (total) + '%';	
+		$('#answer').val(total);
+		console.log(total);
+	});
+	
 }

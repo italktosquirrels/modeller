@@ -1,6 +1,4 @@
-export default
-{
-    "Lang_prod": [
+var data =  `[
         {
             "LANGUAGE": "1032/AF",
             "LEVEL": "20",
@@ -2929,5 +2927,4 @@ export default
             "FP/Man/Month": "13.64464042",
             "LOC/FP (AVERAGE SOURCE STATEMENTS PER FUNCTION POINT)": "64"
         }
-    ]
-}
+    ]`;
