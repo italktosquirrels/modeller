@@ -1,3 +1,13 @@
+/**
+ * This project was done by Alexander Watson - 001197775, 
+ * Aleksandar Spasic - 000759190, 
+ * Andrew Castro - 000771147, 
+ * Andrew Dolihan - 000397426, 
+ * Alexander Gellert - 000773482. 
+ * Example code was analysed inorder to develope our own version.
+ */
+
+//GLOBAL VARIABLES
 var G_unadjustedFPTotal = 0;
 var technical_Complexity = 0;
 var company_Benefits = 0;
