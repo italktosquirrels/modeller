@@ -108,6 +108,31 @@ function technicalComplexity() {
 
 }
 
+/**
+ * Company Benefits
+ * Gets the values from the Company Benefits Radio Boxes
+ * and calculates the weighting
+ * Author: Alexander Gellert
+ */
+function companyBenefits() {
+    var remoteWork;
+    var workLunch;
+    var workSnacks;
+    var flexHours;
+
+    remoteWork = $('input[name="remoteWork"]:checked').val();
+    workLunch = $('input[name="workLunch"]:checked').val();
+    workSnacks = $('input[name="workSnacks"]:checked').val();
+    flexHours = $('input[name="flexHours"]:checked').val();
+    benefitSum = parseInt(remoteWork) + parseInt(workLunch) + parseInt(workSnacks) + parseInt(flexHours);
+
+    //Multiplier for every extra company benefit
+    company_Benefits = parseFloat(0.90 + (0.01 * benefitSum));
+    console.log(company_Benefits);
+    $('#benefitsText').val(company_Benefits);
+
+}
+
 function calcFP() {
     adjustedFP = technical_Complexity * G_unadjustedFPTotal
 }
