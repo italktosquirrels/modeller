@@ -102,34 +102,9 @@ function technicalComplexity() {
 
     console.log(technical_Complexity);
 
-    technical_Complexity = parseFloat(0.65 + (0.01 * technicalSum));
+    technical_Complexity = parseFloat(0.65 + (0.01 * technicalSum))
     console.log(technical_Complexity);
     $('#complexWeight').val(technical_Complexity);
-
-}
-
-/**
- * Company Benefits
- * Gets the values from the Company Benefits Radio Boxes
- * and calculates the weighting
- * Author: Alexander Gellert
- */
-function companyBenefits() {
-    var remoteWork;
-    var workLunch;
-    var workSnacks;
-    var flexHours;
-
-    remoteWork = $('input[name="remoteWork"]:checked').val();
-    workLunch = $('input[name="workLunch"]:checked').val();
-    workSnacks = $('input[name="workSnacks"]:checked').val();
-    flexHours = $('input[name="flexHours"]:checked').val();
-    benefitSum = parseInt(remoteWork) + parseInt(workLunch) + parseInt(workSnacks) + parseInt(flexHours);
-
-    //Multiplier for every extra company benefit
-    company_Benefits = parseFloat(0.90 + (0.01 * benefitSum));
-    console.log(company_Benefits);
-    $('#benefitsText').val(company_Benefits);
 
 }
 
@@ -137,8 +112,80 @@ function calcFP() {
     adjustedFP = technical_Complexity * G_unadjustedFPTotal
 }
 
-function calculateDeveloperFactor() {
+/**
+ * This caclulates a speed factor for the project based on the 
+ * developer breakdown
+ * This is developed by Alexander Watson, 001197775
+ */
+function calculateDeveloperSpeedFactor() {
+    jNum = 0
+    iNum = 0
+    sNum = 0
+    totalDevNum = 0.0
 
+    jWeight = 1 //Junior Dev's weight  
+    iWeight = 1.2 //Intermediate Dev's weight
+    sWeight = 1.5 //Senior Dev's Weight
+
+    //Grab all the numbers from the input
+    jNum = $('#numJunior').val()
+    iNum = $('#numIntermediate').val()
+    sNum = $('#numSenior').val()
+
+    //Calculate the total number of developers
+    totalDevNum = parseFloat(jNum) + parseFloat(iNum) + parseFloat(sNum)
+    console.log(totalDevNum)
+
+    //Multiply the number of devs by their respective weights
+    newJuniorWeight = jNum * jWeight
+    newIntermediateWeight = iNum * iWeight
+    newSeniorWeight = sNum * sWeight
+        // newJuniorWeight = Math.pow(jNum,sWeight)
+        // newIntermediateWeight = Math.pow(iNum, iWeight)
+        // newSeniorWeight = Math.pow(sNum, jWeight)
+        //Assign their new factors to the page
+    $("#totalJunior").val(newJuniorWeight)
+    $("#totalIntermediate").val(newIntermediateWeight)
+    $("#totalSenior").val(newSeniorWeight)
+
+    //Calculate the total factor of all the devs
+    totalDev = parseFloat(newJuniorWeight) + parseFloat(newIntermediateWeight) + parseFloat(newSeniorWeight)
+    console.log(totalDev)
+
+    //Devide the total factor by the numer of devs
+    newFactor = parseFloat(totalDev / totalDevNum)
+    x = 1 - newFactor
+    console.log(newFactor)
+        //Making sure the minimum multipluer is at least 1
+        //and place it in the output box
+    if (isNaN(newFactor)) {
+        $("#projectDeveloperFactor").val(1)
+    } else {
+        $("#projectDeveloperFactor").val(newFactor)
+    }
+}
+
+
+/**
+ * THE SMOKING FACTOR
+ * Determines how many days of productivity are lost due to smokers.
+ * Each smoker is assumed to take 11 sick days a year, or 43.2 minutes per dar
+ * Each smoker is assumed to take 3 smoke breaks a day lasting 15 minutes each (Total: 45 minutes)
+ */
+function calculateSmokingFactor() {
+    //Stores total smokers
+    var smokers = $('#number_of_smokers').val();
+    //Stores total project length
+    var projectLength = $('#project_length').val();
+
+    //Determines total minutes lost due to smokers
+    var totalMinutes = ((smokers * 45) * projectLength) + smokers * (projectLength * 43.2)
+        //Converted into days
+    var totalDays = totalMinutes / 1440;
+
+    //Displays to screen
+    $('#smoking_factor_results').val(totalDays + " Days Lost");
+    console.log(totalDays);
 }
 
 
