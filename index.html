@@ -9,6 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
+    <script src="languages.js"></script>
+
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -560,8 +562,8 @@
         </div>
 
         <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label for="complexWeight">Total</label>
+            <div class="col-md-4 mb-3 mt-2">
+                <label for="unadjustedSum">Total</label>
                 <input type="text" class="form-control" id="complexWeight" placeholder="" value="" disabled>
             </div>
         </div>
@@ -570,64 +572,233 @@
 
         <!--Andrew-->
         <h5>LOC/FP</h5>
-        <hr>    
-        <p style="text-align: center;">Select a language from the dropdown to calculate a LOC using historical data:</p>
+        <hr>
+        <p style="text-align: center;" class="mb-1">Select a language from the dropdown to calculate a LOC using historical data:</p>
+        <p style="text-align: center; font-size: 12px;">The value is calculated by multiplying the LOC value with the unadjusted value from the Total Weighting Factors</p>
         <div class="form-group">
             <label for="sel1">Select list:</label>
             <select class="form-control" id="sel1">
-            </select>
-          </div>
+                <option>Select One</option>
+			</select>
+        </div>
         <input type="text" class="form-control" id="totalLOC" placeholder="" value="" disabled="" style="width: 200px; margin-bottom: 20px">
         <button type="button" class="btn btn-primary" onclick="linesOfCode()">Show LOC/FP</button>
 
+        <!--Alexander Watson-->
         <form>
             <h5>DEVELOPERS</h5>
+            <hr>
+            <h6>By Alex Watson</h6>
+            <h6>This section determines a speed multiplyer based on the projects developer breakdown</h6>
             <hr>
             <!-- INPUTS******************************************************************************** -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Number of Junior Developers</label>
-                    <input type="number" class="form-control" id="numInput" placeholder="Enter Number of User Inputs" value="" min=0 required>
+                    <input type="number" class="form-control" id="numJunior" placeholder="Enter Number of Junior Developers" value="" min=0 required>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Total</label>
-                    <input type="text" class="form-control" id="totalInterface" placeholder="" value="" disabled>
+                    <input type="text" class="form-control" id="totalJunior" placeholder="" value="" disabled>
                 </div>
             </div>
             <!-- OUTPUTS******************************************************************************** -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Number of Intermediate Developers</label>
-                    <input type="number" class="form-control" id="numOutput" placeholder="Enter Number of User Outputs" value="" min=0 required>
+                    <input type="number" class="form-control" id="numIntermediate" placeholder="Enter Number of Intermediate Developers" value="" min=0 required>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Total</label>
-                    <input type="text" class="form-control" id="totalInterface" placeholder="" value="" disabled>
+                    <input type="text" class="form-control" id="totalIntermediate" placeholder="" value="" disabled>
                 </div>
             </div>
             <!-- INQUIRIES******************************************************************************** -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Number of Senior Developers</label>
-                    <input type="number" class="form-control" id="numInquire" placeholder="Enter Number of User Inquires" value="" min=0 required>
+                    <input type="number" class="form-control" id="numSenior" placeholder="Enter Number of Senior Developers" value="" min=0 required>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Total</label>
-                    <input type="text" class="form-control" id="totalInterface" placeholder="" value="" disabled>
+                    <input type="text" class="form-control" id="totalSenior" placeholder="" value="" disabled>
                 </div>
             </div>
-           
+
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                    <label for="validationDefault01">Project Developer Factor</label>
+                    <label for="validationDefault01"> Developer Speed Factor</label>
                     <input type="text" class="form-control" id="projectDeveloperFactor" placeholder="" value="" disabled>
                 </div>
             </div>
-            <button class="btn btn-primary" type="button" onclick="calculateDeveloperFactor()">Get Count</button>
+            <button class="btn btn-primary" type="button" onclick="calculateDeveloperSpeedFactor()">Determine </button>
         </form>
-    </div>
+
+        <!-- Company Benefits -->
+        <form>
+            <div>
+                <h5>COMPANY BENEFITS</h5>
+                <hr>
+                <!-- Allowed Remote Work Days -->
+                <div class="row">
+                    <label for="remoteWork" class="col-sm-4 col-form-label">Allowed Remote Work Days</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="0" checked>
+                        <label class="form-check-label" for="inlineRadio1">0</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="2">
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="3">
+                        <label class="form-check-label" for="inlineRadio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="4">
+                        <label class="form-check-label" for="inlineRadio1">4</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="remoteWork" id="remoteWork" value="5">
+                        <label class="form-check-label" for="inlineRadio1">5</label>
+                    </div>
+                </div>
+                <!--- Number of Days Work Provides Lunches --->
+                <div class="row">
+                    <label for="workLunch" class="col-sm-4 col-form-label">Number of Days Work Provides Lunch</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="0" checked>
+                        <label class="form-check-label" for="inlineRadio1">0</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="2">
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="3">
+                        <label class="form-check-label" for="inlineRadio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="4">
+                        <label class="form-check-label" for="inlineRadio1">4</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workLunch" id="workLunch" value="5">
+                        <label class="form-check-label" for="inlineRadio1">5</label>
+                    </div>
+                </div>
+                <!--- Does your work provide Snacks?--->
+                <div class="row">
+                    <label for="workSnacks" class="col-sm-4 col-form-label">Workplace Provided Snacks</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workSnacks" id="workSnacks" value="0" checked>
+                        <label class="form-check-label" for="inlineRadio1">No</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="workSnacks" id="workSnacks" value="3">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                </div>
+                <!--- Flex Hours --->
+                <div class="row">
+                    <label for="flexHours" class="col-sm-4 col-form-label">Flex Hours</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexHours" id="flexHours" value="0" checked>
+                        <label class="form-check-label" for="inlineRadio1">No</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexHours" id="flexHours" value="3">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="benefitsText">Total</label>
+                        <input type="text" class="form-control" id="benefitsText" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="button" onclick="companyBenefits()">Show Company Benefits Weight</button>
+        </form>
+
+        <!-- ALEKSANDAR SPASIC -->
+        <div>
+            <form>
+                <h5>THE SMOKING FACTOR</h5>
+                <p>Determines how many days are lost due to smokers.</p>
+                <hr>
+                <!-- TOTAL SMOKERS -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="number_of_smokers">Number of Smokers</label>
+                        <input type="number" class="form-control" id="number_of_smokers" placeholder="Enter Number of Smokers" value="" min=0 required>
+                    </div>
+                </div>
+                <!-- TOTAL PROJECT LENGTH -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="project_length">Estimated Project Length</label>
+                        <input type="number" class="form-control" id="project_length" placeholder="Enter Total Days" value="" min=0 required>
+                    </div>
+                </div>
+                <!-- SMOKING FACTOR OUTPUT -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="smoking_factor_results">The Smoking Factor Results</label>
+                        <input type="text" class="form-control" id="smoking_factor_results" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="button" onclick="calculateSmokingFactor()">Get Factor</button>
+
+            </form>
+        </div>
+
+        <!-- ANDREW CASTRO -->
+        <!-- This section determines how many hours will be lost to government mandated breaks -->
+        <div>
+            <form>
+                <h5>TIME LOST TO BREAKS</h5>
+                <p>Determines how many days are lost due to government mandated breaks (Not including bathroom breaks or smoke breaks)</p>
+                <hr>
+                <!-- Total Number of Employees -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="number_of_employees">Number of Employees</label>
+                        <input type="number" class="form-control" id="number_of_employees" placeholder="Enter Number of Employees" value="" min=0 required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="number_of_15">Number of 15 minute breaks per day</label>
+                        <input type="number" class="form-control" id="number_of_15" placeholder="Enter Number of 15 minute breaks" value="" min=0 required>
+                    </div>
+                </div>
+                <!-- Total length of project -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="project_length_breaks">Estimated Project Length (Working Days Only)</label>
+                        <input type="number" class="form-control" id="project_length_breaks" placeholder="Enter Total Days" value="" min=0 required>
+                    </div>
+                </div>
+                <!-- Output -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="smoking_factor_results">Time lost to breaks (Days)</label>
+                        <input type="text" class="form-control" id="time_lost_results" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="button" onclick="calculateBreaks()">Get Factor</button>
+
+            </form>
+        </div>
+        </div>
     </div>
 
 </body>
-
-</html>
