@@ -9,6 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
+    <script src="languages.js"></script>
+
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -560,8 +562,8 @@
         </div>
 
         <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label for="complexWeight">Total</label>
+            <div class="col-md-4 mb-3 mt-2">
+                <label for="unadjustedSum">Total</label>
                 <input type="text" class="form-control" id="complexWeight" placeholder="" value="" disabled>
             </div>
         </div>
@@ -571,14 +573,66 @@
         <!--Andrew-->
         <h5>LOC/FP</h5>
         <hr>
-        <p style="text-align: center;">Select a language from the dropdown to calculate a LOC using historical data:</p>
+        <p style="text-align: center;" class="mb-1">Select a language from the dropdown to calculate a LOC using historical data:</p>
+        <p style="text-align: center; font-size: 12px;">The value is calculated by multiplying the LOC value with the unadjusted value from the Total Weighting Factors</p>
         <div class="form-group">
             <label for="sel1">Select list:</label>
             <select class="form-control" id="sel1">
+                <option>Select One</option>
 			</select>
         </div>
         <input type="text" class="form-control" id="totalLOC" placeholder="" value="" disabled="" style="width: 200px; margin-bottom: 20px">
         <button type="button" class="btn btn-primary" onclick="linesOfCode()">Show LOC/FP</button>
+
+
+		<table class = "table">
+			<thead>
+			
+				<th>Software Project</th>
+				<th>a<sub>b</th>
+				<th>b<sub>b</th>
+				<th>c<sub>b</th>
+				<th>d<sub>b</th>
+				<th>Select</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td> Organic</td>
+					<td>2.4</td>
+					<td>1.05</td>
+					<td>2.5</td>
+					<td>0.38</td>
+					<td><input type = "radio" name = "complexRadio" id = "organic"></td>
+				</tr>
+				<tr>
+					<td> Semi- Detached</td>
+					<td>3.0</td>
+					<td>1.12</td>
+					<td>2.5</td>
+					<td>0.35</td>
+					<td><input type = "radio" name = "complexRadio" id = "semi-detached"></td>
+				</tr>
+				<tr>
+					<td> Embedded</td>
+					<td>3.6</td>
+					<td>1.20</td>
+					<td>2.5</td>
+					<td>0.32</td>
+					<td><input type = "radio" name = "complexRadio" id = "embedded"></td>
+				</tr>
+				
+				
+			</tbody>
+			
+			
+		</table>
+		<button class="btn btn-primary" type="submit" name = "submitEffort" id = "submitEffort"onclick = "calcE()">Calculate Effort and Duration</button>
+			
+		
+		<br>
+		<p>Effort(E) = a <sub>b</sub>(KLOC) <sup> b </sup> b = <input class = "form-control"id = "effortAnswer"type = "text" name = "" disabled> Duration (D) = c <sub>b</sub>(E)<sup>d</sup><sub>b</sub> = <input class = "form-control" type = "text" id = "durationAnswer" disabled></p>	
+		
+
 
         <!--Alexander Watson-->
         <form>
@@ -755,7 +809,82 @@
 
             </form>
         </div>
+
+        <!-- ANDREW CASTRO -->
+        <!-- This section determines how many hours will be lost to government mandated breaks -->
+        <div>
+            <form>
+                <h5>TIME LOST TO BREAKS</h5>
+                <p>Determines how many days are lost due to government mandated breaks (Not including bathroom breaks or smoke breaks)</p>
+                <hr>
+                <!-- Total Number of Employees -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="number_of_employees">Number of Employees</label>
+                        <input type="number" class="form-control" id="number_of_employees" placeholder="Enter Number of Employees" value="" min=0 required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="number_of_15">Number of 15 minute breaks per day</label>
+                        <input type="number" class="form-control" id="number_of_15" placeholder="Enter Number of 15 minute breaks" value="" min=0 required>
+                    </div>
+                </div>
+                <!-- Total length of project -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="project_length_breaks">Estimated Project Length (Working Days Only)</label>
+                        <input type="number" class="form-control" id="project_length_breaks" placeholder="Enter Total Days" value="" min=0 required>
+                    </div>
+                </div>
+                <!-- Output -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="smoking_factor_results">Time lost to breaks (Days)</label>
+                        <input type="text" class="form-control" id="time_lost_results" placeholder="" value="" disabled>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="button" onclick="calculateBreaks()">Get Factor</button>
+
+            </form>
         </div>
+        </div>
+		
+		
+		
+		<!-- Andrew Dolihan -->
+		<!-- This section determines the percentage that emplooyees are happy working -->
+		<h6> Company Events </h6>
+		<table class = "table">
+			<tr>
+				<th>Question</th>
+				<th>Yes</th>
+				<th>No</th>
+			</tr>
+			<tr>
+				<td>Does your work celebrate holidays?</td>
+				<td><input value = 2 name = "q1RadioBtn"type = "radio"></td>
+				<td><input value = 1 name = "q1RadioBtn" type = "radio"></td>
+			
+			</tr>
+			<tr>
+				<td>Does your work hold retirement parties? </td>
+				<td><input = value = 2 name = "q2RadioBtn" type = "radio"></td>
+				<td><input = value = 1 name = "q2RadioBtn" type = "radio"></td>
+			</tr>
+			<tr>
+				<td>Does your work hold charity events? </td>
+				<td><input = value = 2 name = "q3RadioBtn" type = "radio"></td>
+				<td><input = value = 1 name = "q3RadioBtn" type = "radio"></td>
+			</tr>			
+			<tr>
+				<td>Does your work hold any weekly events? (For example: Dress down Fridays for $2) </td>
+				<td><input = value = 2 name = "q4RadioBtn" type = "radio"></td>
+				<td><input = value = 1 name = "q4RadioBtn" type = "radio"></td>
+			</tr>			
+		</table>
+		<input class = "form-control"type = "text" id = "answer" disabled >
+		<button class = "btn btn-primary"type="submit" value="Submit" onclick = "showValue()" id = "getValue">Submit</button>
     </div>
 
 </body>
